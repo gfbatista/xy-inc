@@ -17,28 +17,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.luizalabs.desafioapi.model.Poi;
 import com.luizalabs.desafioapi.service.PoiService;
 
-
 @RestController
 @RequestMapping("/poi")
 public class PoiController {
-	
+
 	@Autowired
 	private PoiService poiService;
-	
+
 	@GetMapping
 	public List<Poi> listar() {
 		return poiService.listar();
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Poi> criar(@Valid @RequestBody Poi poi) {
 		Poi poiSalvo = poiService.salvar(poi);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(poiSalvo);
 	}
-	
+
 	@GetMapping("/proximidade")
-	public List<Poi> listarPorProximidade(@RequestParam Long x, @RequestParam Long y, @RequestParam Long d) {
+	public List<Poi> listarPorProximidade(@RequestParam(value = "x", required = true) Long x,
+			@RequestParam(value = "y", required = true) Long y, @RequestParam(value = "d", required = true) Long d) {
 		return poiService.listarPorProximidade(x, y, d);
 	}
 
