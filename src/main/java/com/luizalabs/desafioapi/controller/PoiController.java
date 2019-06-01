@@ -25,21 +25,21 @@ public class PoiController {
 	private PoiService poiService;
 
 	@GetMapping
-	public List<Poi> listar() {
-		return poiService.listar();
+	public List<Poi> list() {
+		return poiService.list();
 	}
 
 	@PostMapping
-	public ResponseEntity<Poi> criar(@Valid @RequestBody Poi poi) {
-		Poi poiSalvo = poiService.salvar(poi);
+	public ResponseEntity<Poi> create(@Valid @RequestBody Poi poi) {
+		Poi poiSalvo = poiService.save(poi);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(poiSalvo);
 	}
 
 	@GetMapping("/proximidade")
-	public List<Poi> listarPorProximidade(@RequestParam(value = "x", required = true) Long x,
+	public List<Poi> listByProximity(@RequestParam(value = "x", required = true) Long x,
 			@RequestParam(value = "y", required = true) Long y, @RequestParam(value = "d", required = true) Long d) {
-		return poiService.listarPorProximidade(x, y, d);
+		return poiService.listByProximity(x, y, d);
 	}
 
 }

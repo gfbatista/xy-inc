@@ -15,16 +15,16 @@ public class PoiService {
 	@Autowired
 	private PoiRepository poiRepository;
 
-	public List<Poi> listar() {
+	public List<Poi> list() {
 		return poiRepository.findAll();
 	}
 
-	public Poi salvar(Poi poi) {
+	public Poi save(Poi poi) {
 		return poiRepository.save(poi);
 	}
 
-	public List<Poi> listarPorProximidade(long x, long y, long d) {
-		List<Poi> itens = listar();
+	public List<Poi> listByProximity(long x, long y, long d) {
+		List<Poi> itens = list();
 
 		return itens.stream().filter(poi -> calculoCoordenadas(poi, x, y) <= d).collect(Collectors.toList());
 	}
