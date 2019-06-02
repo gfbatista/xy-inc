@@ -19,7 +19,7 @@ public class PoiService {
 		return poiRepository.findAll();
 	}
 
-	public Poi save(Poi poi) {
+	public Poi create(Poi poi) {
 		return poiRepository.save(poi);
 	}
 

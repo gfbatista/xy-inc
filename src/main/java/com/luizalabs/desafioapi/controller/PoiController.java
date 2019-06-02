@@ -31,7 +31,7 @@ public class PoiController {
 
 	@PostMapping
 	public ResponseEntity<Poi> create(@Valid @RequestBody Poi poi) {
-		Poi poiSalvo = poiService.save(poi);
+		Poi poiSalvo = poiService.create(poi);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(poiSalvo);
 	}
