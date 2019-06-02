@@ -11,7 +11,7 @@ A aplicação possui em 3 serviços: <br>
 - Serviço para buscar os POIs por proximidade, passando 3 parâmetros: <br>
 > x: valor da coordenada "x" <br>
 > y: valor da coordenada "y" <br>
-> d: distância máxima em metros "m"
+> d: distância máxima em metros "m" <br>
 
 <b> Iniciando a Aplicação: </b><br>
 Método utilizado: POST <br>
