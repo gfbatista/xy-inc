@@ -68,7 +68,7 @@ URI: http://localhost:8080/poi
 Método utilizado: GET <br>
 URI: http://localhost:8080/poi/proximidade?x=20&y=10&d=10
 
-<b> A aplicação utiliza o banco H2 em memória. </b><br>
+<b> A aplicação utiliza o banco H2 em memória </b><br>
 Console: http://localhost:8080/h2-console <br>
 Username=sa <br>
 Password=
